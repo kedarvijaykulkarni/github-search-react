@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Pagination, Loading } from '../components';
+import { Pagination, Loading, User } from '../components';
 import { GithubContext } from '../context/context';
+
 
 const Results = () => {
   const { githubUsers, loading } = React.useContext(GithubContext);
@@ -13,41 +14,12 @@ const Results = () => {
     return (
       <Wrapper>
           <ul role="list" className="divide-y divide-gray-200">
-              {githubUsers?.items.map((item) => <Item key={item.id} {...item}></Item>)}
+              {githubUsers?.map((item) => <User url={item.url} key={item.id} {...item}></User>)}
           </ul>
           <Pagination></Pagination>
       </Wrapper>
     );
   }
-};
-
-const Item = ({avatar_url, login, html_url, type}) => {
-    return(
-    <li>
-        <a href={html_url} className="block hover:bg-gray-50" target="_blank">
-        <div className="px-4 py-4 sm:px-6">
-            <div className="flex items-center justify-between text-sm text-gray-300">
-                {type}
-            </div>
-            <div className="mt-2 flex justify-between">
-            <div className="sm:flex">
-                <div className="mr-6 flex items-center text-sm text-gray-500">
-                    <img className="mr-6 h-10 w-10 rounded-full" alt={login} src={avatar_url} />
-                    <div>
-                        <div className="text-lg font-medium uppercase text-indigo-600 truncate">
-                            {login}
-                        </div>
-                        <div className="text-md font-medium text-600 truncate">
-                            {html_url}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    )
 };
 
 

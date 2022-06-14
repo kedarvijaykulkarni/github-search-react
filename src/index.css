@@ -158,3 +158,22 @@ p {
   width: 16px;
 }
 
+button:disabled,
+button[disabled]{
+  pointer-events: none;
+  background: var(--clr-grey-7) !important;
+  border-color: var(--clr-grey-7) !important;
+  cursor: not-allowed !important;
+}
+
+.hireable {
+  box-shadow: 10px 0 0px 0 hsl(180deg 51% 52%) inset;
+}
+
+.user:hover {
+  box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px; 
+}
+
+.hireable.user:hover  {
+  box-shadow: inset rgba(0 0 0 / 15%) 0px 0px 0px 1px, 10px 0 0px 0 hsl(180deg 51% 52%) inset;
+}
