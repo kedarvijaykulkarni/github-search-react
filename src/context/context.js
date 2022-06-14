@@ -50,7 +50,7 @@ const GithubProvider = ({ children }) => {
         }
       });
     } else {
-      url += `&per_page=${perPage}&page=${page}`;
+      url += `&per_page=${perPage}&page=1`;
     }
 
     const response = await axios
@@ -93,7 +93,9 @@ const GithubProvider = ({ children }) => {
       : 0;
 
       // create a pagination based on response from link
-      setPagination(githubLink.sort((a,b) => a.order - b.order));
+      if(githubLink) { //for single user need this
+        setPagination(githubLink.sort((a,b) => a.order - b.order));
+      }
 
       // set the results to main github usres
       setGithubUsers(response.data.items);
@@ -146,6 +148,7 @@ const GithubProvider = ({ children }) => {
           getUserDetails,
           page,
           perPage,
+          setPage
         }
       }>
       {children}

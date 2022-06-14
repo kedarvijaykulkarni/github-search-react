@@ -7,6 +7,7 @@ const Search = () => {
   const { 
     totalUsers,
     searchGithubUsers,
+    setPage,
     setSelectedUser,
     setGithubUsers,
     setPagination,
@@ -16,12 +17,15 @@ const Search = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     if (user) {
+      handelClear();
+      setUser(user);
       setSelectedUser(user);
-			searchGithubUsers(user);
+			searchGithubUsers(user, '');
 		}
   }
 
   const handelClear = () => {
+    setPage(1);
     setUser('');
     setSelectedUser('');
     setGithubUsers(undefined);

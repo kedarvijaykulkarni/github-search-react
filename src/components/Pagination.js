@@ -23,6 +23,7 @@ const Pagination = () => {
     return (
       <Wrapper>
         <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+          {totalUsers > 1 ?
           <div className="flex-1 flex justify-between sm:hidden">
             {pagination.map((btn) => {  btn.rel != 'first' &&  btn.rel !== 'last'
               return <button
@@ -35,13 +36,25 @@ const Pagination = () => {
                       </button>
             })}
           </div>
+          : ''}
           <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
-              <p className="text-sm text-gray-700">
-                Showing <span className="font-medium">{startIndex}</span> to <span className="font-medium">{endIndex}</span> of{' '}
-                <span className="font-medium">{totalUsers} </span> results
-              </p>
+              {totalUsers > 1
+                ?
+                <p className="text-sm text-gray-700">
+                  Showing <span className="font-medium">{startIndex}</span> to <span className="font-medium">{endIndex}</span> of{' '}
+                  <span className="font-medium">{totalUsers} </span> results
+                </p>
+                :
+                <p className="text-sm text-gray-700">
+                  Showing <span className="font-medium">{startIndex}</span> of{' '}
+                  <span className="font-medium">{totalUsers} </span> result
+                </p>
+              }
+
             </div>
+            {totalUsers > 1
+            ?
             <div>
               <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
                 {pagination.map((btn) => {  
@@ -56,6 +69,7 @@ const Pagination = () => {
                 })}
               </nav>
             </div>
+            : ''}
           </div>
         </div>
       </Wrapper>
