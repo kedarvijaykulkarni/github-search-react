@@ -1,5 +1,3 @@
-
-
 ### create a project
 
 ```console
@@ -8,7 +6,7 @@ npx create-react-app github-search-react`
 cd github-search-react
 ```
 
-### add git refrence 
+### add git refrence
 
 ```console
 git remote add origin git@github.com:kedarvijaykulkarni/github-search-react.git
@@ -18,7 +16,7 @@ git branch -M master
 git push -u origin master
 ```
 
-### Install Tailwind CSS 
+### Install Tailwind CSS
 
 ```console
 npm install -D tailwindcss postcss autoprefixer
@@ -27,25 +25,22 @@ npx tailwindcss init -p
 ```
 
 ```javascript
-    // tailwind.config.js
-    module.exports = {
-    content: [
-        "./src/**/*.{js,jsx,ts,tsx}",
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
-    }
+// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
 ```
 
 ```css
-    /* index.css */
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
-
 
 ### Additional packages
 
@@ -69,7 +64,6 @@ npm install axios react-router-dom styled-components cypress
 - [Rate Limit](https://api.github.com/rate_limit)
 
 For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
-
 
 ## Run the Cypress test by running:
 
