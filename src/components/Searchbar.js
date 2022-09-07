@@ -82,6 +82,7 @@ const Wrapper = styled.section`
   margin-bottom: 16px;
   background: var(--clr-white);
   padding: 1.5rem 2rem;
+  margin: 1rem 0;
 `;
 
 export default Search;
