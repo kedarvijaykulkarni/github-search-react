@@ -1,5 +1,5 @@
 import React from "react";
-import { Search, Error } from "./pages";
+import { Search, Profile, Error } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Search></Search>}></Route>
         <Route path="*" element={<Error></Error>}></Route>
+        <Route path="/Profile/:username" element={<Profile></Profile>}></Route>
       </Routes>
     </BrowserRouter>
   );

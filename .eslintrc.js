@@ -5,7 +5,7 @@ module.exports = {
     node: true,
   },
   extends: "eslint:recommended",
-  plugins: ["prettier"],
+  plugins: ["react"],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: "module",
