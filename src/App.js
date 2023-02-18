@@ -1,6 +1,7 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Error, Profile, Search } from "./pages";
+
 import React from "react";
-import { Search, Profile, Error } from "./pages";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
